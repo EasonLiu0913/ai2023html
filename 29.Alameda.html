@@ -24,6 +24,7 @@
             margin-right: auto;
         }
 
+        /* HEADER */
 
         header {
             width: 100%;
@@ -34,9 +35,11 @@
             margin-bottom: 100px;
         }
 
+
         nav {
             /* background-color: deeppink; */
             /* min-height: 50px; */
+            margin-bottom: 50px;
         }
 
         .left,
@@ -97,6 +100,8 @@
             border-right: none;
         }
 
+        @media screen {}
+
         /* MAIN */
 
         .products {
@@ -107,10 +112,15 @@
         }
 
         .col {
-            width: 25%;
+            width: 100%;
             margin-bottom: 20px;
             padding-left: 5px;
             padding-right: 5px;
+
+        }
+
+        .card {
+            border: 1px solid #000;
         }
 
         .card img {
@@ -125,6 +135,23 @@
 
         .card p {
             font-size: 10px;
+        }
+
+        @media screen and (min-width:768px) {
+            .col {
+                width: 50%;
+            }
+        }
+
+        @media screen and (min-width:992px) {
+            .col {
+                width: 25%;
+            }
+        }
+
+        footer>div {
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
@@ -228,7 +255,19 @@
         </section>
     </main>
 
-    <footer></footer>
+    <footer>
+        <div></div>
+        <div></div>
+        <div>
+            <form action="">
+                <input type="text" name="useremail" placeholder="User Email...">
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div>
+            Made with <a href="#">Squarespace</a>
+        </div>
+    </footer>
 </body>
 
 </html>
