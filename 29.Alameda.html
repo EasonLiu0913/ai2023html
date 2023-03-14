@@ -18,10 +18,25 @@
             box-sizing: border-box;
         }
 
+        .container {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
         header {
             width: 100%;
             /* border: 1px solid red; */
             display: flex;
+            /* background-color: chocolate; */
+
+            margin-bottom: 100px;
+        }
+
+        nav {
+            /* background-color: deeppink; */
+            /* min-height: 50px; */
         }
 
         .left,
@@ -59,11 +74,33 @@
             font-size: 1.6rem;
             color: rgb(211, 112, 112);
         }
+
+        /* NAV */
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+
+            border-bottom: 1px solid red;
+            padding-bottom: 50px;
+        }
+
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            border-right: 1px solid red;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .nav-links a:nth-child(3) {
+            border-right: none;
+        }
     </style>
 </head>
 
 <body>
-    <header>
+    <header class="container">
         <div class="left">
             <ul>
                 <li>
@@ -96,7 +133,15 @@
         </div>
     </header>
 
-    <nav></nav>
+    <nav>
+        <div class="container">
+            <div class="nav-links">
+                <a href="#">Tops</a>
+                <a href="#">Bottoms</a>
+                <a href="#">Sale</a>
+            </div>
+        </div>
+    </nav>
 
     <main></main>
 
