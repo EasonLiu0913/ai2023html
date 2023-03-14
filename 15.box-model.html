@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box model</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            /* width: 600px; */
+            /* display: flex; */
+            /* flex-wrap: wrap; */
+            /* border: 1px solid red; */
+        }
+
+        .box{
+            display: block;
+            width: 300px;
+            /* line-height: 2; */
+
+            /* text-align: right; */
+
+            /* background-color: brown; */
+            font-size: 3rem;
+            
+            /* margin-left: 50px; */
+
+            border: 3px solid blue;
+
+            /* padding-left: 100px;
+            padding-right: 100px; */
+
+            /* padding-bottom: 30px; */
+
+            /* margin-right: auto; */
+            /* margin-bottom: 30px; */
+        }
+
+        .box2{
+            margin-left: auto;
+        }
+
+        .box3{
+            margin-right: auto;
+            margin-left: auto;
+
+            /* margin: auto; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">box</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+    </div>
+</body>
+</html>
