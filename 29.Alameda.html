@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alameda</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         header {
             width: 100%;
             border: 1px solid red;
@@ -20,6 +26,19 @@
             flex: 1 1 0;
         }
 
+        .left ul {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 10px;
+        }
+
+        .left ul li a {
+            color: #000;
+            text-decoration: none;
+        }
+
         .middle {
             text-align: center;
         }
@@ -28,8 +47,25 @@
 
 <body>
     <header>
-        <div class="left">left</div>
-        <div class="middle">Middle</div>
+        <div class="left">
+            <ul>
+                <li>
+                    <a href="#">Shop</a>
+                </li>
+                <li>
+                    <a href="#">Lookbook</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="middle">
+            <h1>Alameda</h1>
+        </div>
         <div class="right">right</div>
     </header>
 
