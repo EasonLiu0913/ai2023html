@@ -33,6 +33,11 @@
         /* #globlenav>li {}
 
         #globlenav li {} */
+
+        .hide {
+            opacity: 0;
+            transition: 2s;
+        }
     </style>
 </head>
 
@@ -51,6 +56,23 @@
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem ipsum ea unde sed officiis dolor ex
         rerum consectetur? Necessitatibus dolores magnam et incidunt molestiae perspiciatis a quas sequi earum saepe.
     </p>
+
+    <button>Click</button>
+    <div class="hide">
+        <h1>Hello 2</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam molestiae eaque optio non ipsum eligendi
+            similique itaque saepe earum, numquam nulla doloremque culpa! Odit deserunt quis reprehenderit, repellendus
+            iusto voluptates.</p>
+    </div>
+
+    <script>
+        const btn = document.querySelector('button')
+        const hideDiv = document.querySelector('.hide')
+
+        btn.addEventListener('click', function () {
+            hideDiv.style.opacity = 1
+        })
+    </script>
 </body>
 
 </html>
