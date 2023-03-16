@@ -135,6 +135,10 @@
                 display: block;
             }
 
+            .item {
+                position: absolute;
+            }
+
             .item img {
                 width: 100%;
             }
@@ -194,12 +198,12 @@
                 </div>
 
                 <div class="items">
-                    <div class="item">
+                    <!-- <div class="item" style="position: absolute; top:30%;left:10%">
                         <img src="./normann-imgs-main/section3/elementor_items/ldp_elemontor1.png" alt="">
                     </div>
                     <div class="item">
                         <img src="./normann-imgs-main/section3/elementor_items/ldp_elemontor2.png" alt="">
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -277,6 +281,37 @@
                 right: '6%',
             },
         ];
+
+        const items = document.querySelector('.items')
+
+
+        console.log('1st:', positionData[0]);
+        console.log('keys:', Object.keys(positionData[0]));
+
+        const dataArray = Object.keys(positionData[11]);
+        let styleString = '';
+        dataArray.map(function (key, i) {
+            const value = positionData[11][key];
+            styleString += `${key}:${value};`
+        })
+
+        console.log('styleString', styleString);
+
+        let htmlString = `<div class="item" style="${styleString}">
+                        <img src="./normann-imgs-main/section3/elementor_items/ldp_elemontor1.png" alt="">
+                    </div>`
+
+        console.log('htmlString', htmlString);
+
+        items.innerHTML = htmlString;
+
+        // for (let i = 0; i < Object.keys(positionData[0]).length; i++) {
+        //     const key = Object.keys(positionData[0])[i];
+        //     const value = positionData[0][key]
+
+        //     console.log(`${i}st key:`, key);
+        //     console.log(`${i}st value:`, value);
+        // }
 
     </script>
 </body>
