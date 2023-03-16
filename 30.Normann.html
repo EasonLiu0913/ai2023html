@@ -284,28 +284,37 @@
 
         const items = document.querySelector('.items')
 
-
-        // console.log('1st:', positionData[0]);
-        // console.log('keys:', Object.keys(positionData[0]));
-        let htmlString = ''
-
         positionData.map(function (data, index) {
-            const dataArray = Object.entries(data);
-            let styleString = dataArray.map(function (item, i) {
-                return `${item[0]}:${item[1]};`
-            }).join('')
-
-            htmlString += `<div class="item" style="${styleString}">
-                        <img src="./normann-imgs-main/section3/elementor_items/ldp_elemontor${index + 1}.png" alt="">
-                    </div>`
-
-            console.log('htmlString', htmlString);
-
+            const newItemDiv = document.createElement('div')
+            newItemDiv.className = 'item'
+            Object.assign(newItemDiv.style, data)
+            newItemDiv.innerHTML = `<img src="./normann-imgs-main/section3/elementor_items/ldp_elemontor${index + 1}.png" alt="">`
+            items.appendChild(newItemDiv)
         })
 
 
 
-        items.innerHTML = htmlString;
+        // console.log('1st:', positionData[0]);
+        // console.log('keys:', Object.keys(positionData[0]));
+        // let htmlString = ''
+
+        // positionData.map(function (data, index) {
+        //     const dataArray = Object.entries(data);
+        //     let styleString = dataArray.map(function (item, i) {
+        //         return `${item[0]}:${item[1]};`
+        //     }).join('')
+
+        //     htmlString += `<div class="item" style="${styleString}">
+        //                 <img src="./normann-imgs-main/section3/elementor_items/ldp_elemontor${index + 1}.png" alt="">
+        //             </div>`
+
+        //     console.log('htmlString', htmlString);
+
+        // })
+
+
+
+        // items.innerHTML = htmlString;
 
         // for (let i = 0; i < Object.keys(positionData[0]).length; i++) {
         //     const key = Object.keys(positionData[0])[i];
