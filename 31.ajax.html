@@ -61,8 +61,10 @@
                     })
                     .then((response) => response.json())
                     .then((json) => {
-                        alert('修改成功')
-                        console.log('json', json);
+                        if (json.success) {
+                            alert('修改成功')
+                            console.log('json', json);
+                        }
                     });
 
 
