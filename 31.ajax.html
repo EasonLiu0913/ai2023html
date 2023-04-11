@@ -49,7 +49,24 @@
 
         updateBtn.addEventListener('click', function () {
             if (sid.value === '') alert('請先登入')
-            else alert(sid.value)
+            else {
+                fetch(`http://127.0.0.1:5000/db/student/${sid.value}`,
+                    {
+                        method: 'PUT',
+                        headers: { 'content-type': 'application/json' },
+                        body: JSON.stringify({
+                            username: username.value,
+                            password: password.value
+                        })
+                    })
+                    .then((response) => response.json())
+                    .then((json) => {
+                        alert('修改成功')
+                        console.log('json', json);
+                    });
+
+
+            }
         })
 
     </script>
