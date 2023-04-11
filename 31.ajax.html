@@ -16,6 +16,7 @@
         <input type="text" name="password" id="password">
         <button type="button" id="loginBtn">Login</button>
         <button type="button" id="updateBtn">Update</button>
+        <button type="button" id="deleteBtn">Delete</button>
     </form>
     <script>
         // fetch('http://127.0.0.1:5000/db/students')
@@ -26,6 +27,7 @@
         const password = document.querySelector('#password')
         const loginBtn = document.querySelector('#loginBtn')
         const updateBtn = document.querySelector('#updateBtn')
+        const deleteBtn = document.querySelector('#deleteBtn')
 
         loginBtn.addEventListener('click', function () {
             fetch('http://127.0.0.1:5000/db/students', {
@@ -38,11 +40,13 @@
             })
                 .then((response) => response.json())
                 .then((json) => {
-                    alert('登入成功')
-                    console.log('json', json);
-                    const userSid = json.results[0]['s_id']
-                    console.log('userSid', userSid);
-                    sid.value = userSid;
+                    if (json.success) {
+                        alert('登入成功')
+                        console.log('json', json);
+                        const userSid = json.results[0]['s_id']
+                        console.log('userSid', userSid);
+                        sid.value = userSid;
+                    }
 
                 });
         })
@@ -63,6 +67,26 @@
                     .then((json) => {
                         if (json.success) {
                             alert('修改成功')
+                            console.log('json', json);
+                        }
+                    });
+
+
+            }
+        })
+
+        deleteBtn.addEventListener('click', function () {
+            if (sid.value === '') alert('請先登入')
+            else {
+                fetch(`http://127.0.0.1:5000/db/student/${sid.value}`,
+                    {
+                        method: 'DELETE',
+                        headers: { 'content-type': 'application/json' }
+                    })
+                    .then((response) => response.json())
+                    .then((json) => {
+                        if (json.success) {
+                            alert('刪除成功')
                             console.log('json', json);
                         }
                     });
