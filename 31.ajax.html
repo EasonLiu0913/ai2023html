@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="text" id="sid" value="" hidden>
+        <input type="text" name="username" id="username">
+        <input type="text" name="password" id="password">
+        <button type="button" id="loginBtn">Login</button>
+        <button type="button" id="updateBtn">Update</button>
+    </form>
+    <script>
+        // fetch('http://127.0.0.1:5000/db/students')
+        //     .then((response) => response.json())
+        //     .then((json) => console.log(json));
+        const sid = document.querySelector('#sid')
+        const username = document.querySelector('#username')
+        const password = document.querySelector('#password')
+        const loginBtn = document.querySelector('#loginBtn')
+        const updateBtn = document.querySelector('#updateBtn')
+
+        loginBtn.addEventListener('click', function () {
+            fetch('http://127.0.0.1:5000/db/students', {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify({
+                    username: username.value,
+                    password: password.value
+                })
+            })
+                .then((response) => response.json())
+                .then((json) => {
+                    alert('登入成功')
+                    console.log('json', json);
+                    const userSid = json.results[0]['s_id']
+                    console.log('userSid', userSid);
+                    sid.value = userSid;
+
+                });
+        })
+
+        updateBtn.addEventListener('click', function () {
+            if (sid.value === '') alert('請先登入')
+            else alert(sid.value)
+        })
+
+    </script>
+</body>
+
+</html>
